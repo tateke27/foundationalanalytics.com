@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundational Analytics | Data & AI Solutions for Commercial Construction</title>
+    <meta name="description" content="Data & AI solutions for mid-market general contractors. We connect your systems, automate reporting, and surface the insights hiding in your data.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #1F3554;
+            line-height: 1.6;
+        }
+
+        /* ── Navigation ── */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(11, 37, 69, 0.95);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        nav .logo-area img {
+            height: 36px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 4px 5px;
+            border-radius: 4px;
+        }
+
+        nav .logo-area span {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #FFFFFF;
+            letter-spacing: 0.02em;
+        }
+
+        nav a.cta-nav {
+            background: #F37021;
+            color: #FFFFFF;
+            padding: 0.5rem 1.25rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        nav a.cta-nav:hover {
+            background: #d9601a;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            background: linear-gradient(135deg, #0B2545 0%, #1F3554 100%);
+            color: #FFFFFF;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-content img {
+            height: 180px;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+        }
+
+        .hero .tagline {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #F37021;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #8DA9C4;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: #F37021;
+            color: #FFFFFF;
+            padding: 0.9rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: #d9601a;
+            transform: translateY(-2px);
+        }
+
+        /* ── Sections shared ── */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #6B7280;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        /* ── Problem Section ── */
+        .problem {
+            background: #FFFFFF;
+        }
+
+        .problem .pain-points {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .problem .pain-points li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #E5E7EB;
+            font-size: 1.05rem;
+        }
+
+        .problem .pain-points li:last-child {
+            border-bottom: none;
+        }
+
+        .problem .pain-points li em {
+            color: #F37021;
+            font-style: italic;
+        }
+
+        /* ── What We Do ── */
+        .services {
+            background: #F8F9FA;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: #FFFFFF;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #F37021;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #1F3554;
+        }
+
+        .service-card p {
+            color: #6B7280;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ── Who We Work With ── */
+        .audience {
+            background: #0B2545;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        .audience .section-title {
+            color: #FFFFFF;
+        }
+
+        .audience p {
+            color: #8DA9C4;
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ── Why FA ── */
+        .why {
+            background: #FFFFFF;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .why-card {
+            padding: 1.5rem;
+        }
+
+        .why-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #F37021;
+        }
+
+        .why-card p {
+            color: #6B7280;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ── Contact ── */
+        .contact {
+            background: linear-gradient(135deg, #0B2545 0%, #1F3554 100%);
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: #FFFFFF;
+        }
+
+        .contact .lead {
+            color: #8DA9C4;
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-info a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: #F37021;
+        }
+
+        .contact-info .label {
+            color: #8DA9C4;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: #071A33;
+            color: #8DA9C4;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+        }
+
+        footer .tagline {
+            color: #6B7280;
+            margin-top: 0.25rem;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .services-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav .logo-area span {
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 3.5rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            nav {
+                padding: 0.75rem 1rem;
+            }
+
+            nav .logo-area img {
+                height: 28px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo-area">
+            <img src="images/logo.png" alt="Foundational Analytics">
+            <span>Foundational Analytics</span>
+        </div>
+        <a href="#contact" class="cta-nav">Let's Talk</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="images/logo.png" alt="Foundational Analytics logo">
+            <p class="tagline">From Jobsite to Boardroom</p>
+            <h1>Your construction data is talking. We help you hear it.</h1>
+            <p>Data & AI solutions for mid-market general contractors who are ready to stop guessing and start knowing.</p>
+            <a href="#contact" class="btn-primary">Let's Talk &rarr;</a>
+        </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="problem" id="problem">
+        <div class="container">
+            <h2 class="section-title">You have the data. You just can't use it.</h2>
+            <p class="section-subtitle">Your team runs Procore, Sage, Vista, scheduling tools, and estimating software &mdash; each one collecting valuable data. But none of them talk to each other. So someone on your team spends hours every week pulling it all into spreadsheets. Manually. And by the time you get answers, it's too late to change the outcome.</p>
+            <ul class="pain-points">
+                <li>Why did that project lose money? <em>You're not sure.</em></li>
+                <li>Where are your current jobs really at? <em>Depends who you ask.</em></li>
+                <li>Which PMs consistently deliver on budget? <em>You have a feeling, but no proof.</em></li>
+            </ul>
+            <p style="margin-top: 2rem; font-size: 1.05rem; font-weight: 600;">You're not behind because you lack data. You're behind because no one has connected it for you.</p>
+        </div>
+    </section>
+
+    <!-- What We Do -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">We connect your systems, automate your reporting, and surface the insights hiding in your data.</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Connect</h3>
+                    <p>We integrate your existing tools &mdash; Procore, Sage, Vista, scheduling, estimating &mdash; into a unified data platform. No ripping and replacing. We work with what you've got.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Automate</h3>
+                    <p>Those manual spreadsheet reports your team builds every week? We automate them. Real-time dashboards that update themselves, with AI-powered anomaly detection that flags what humans miss.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Analyze</h3>
+                    <p>Cross-project profitability analysis. PM performance benchmarking. Subcontractor scoring. Bid accuracy tracking. The kind of portfolio-level visibility that turns gut feelings into data-driven decisions.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Predict</h3>
+                    <p>When you're ready, we build predictive models for schedule risk, cost forecasting, and project outcomes &mdash; powered by the data foundation we've already built together.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Work With -->
+    <section class="audience" id="audience">
+        <div class="container">
+            <h2 class="section-title">Built for mid-market general contractors.</h2>
+            <p>We work with GCs in the $50M&ndash;$500M range &mdash; firms that are too large to run on spreadsheets and too lean to hire a full-time data team. If your team has outgrown manual reporting but enterprise platforms feel like overkill, we're built for you.</p>
+        </div>
+    </section>
+
+    <!-- Why FA -->
+    <section class="why" id="why">
+        <div class="container">
+            <h2 class="section-title">Why Foundational Analytics</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>25+ years of data platform experience</h3>
+                    <p>This isn't our first build. We bring decades of experience designing and delivering enterprise-grade data and analytics systems &mdash; including Microsoft Certified Master credentials, the highest technical certification Microsoft ever offered.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Construction-first</h3>
+                    <p>We speak your language &mdash; project economics, cost codes, schedule slippage, change orders. Not data jargon.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Platform-agnostic</h3>
+                    <p>Procore, Sage, Vista, Viewpoint, Excel &mdash; we integrate it all. You don't need to change your tools. You need to unlock the data inside them.</p>
+                </div>
+                <div class="why-card">
+                    <h3>AI where it makes sense</h3>
+                    <p>We don't sell AI hype. We use it to clean your data faster, detect anomalies automatically, and surface insights from day one &mdash; then build toward predictive capabilities when you're ready.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Start a Conversation</h2>
+            <p class="lead">Every engagement starts with a conversation &mdash; not a sales pitch.<br>Tell us what's keeping you up at night. We'll tell you honestly whether we can help.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="label">Email</span>
+                    <a href="mailto:keith.tate@foundationalanalytics.com">keith.tate@foundationalanalytics.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="label">Phone</span>
+                    <a href="tel:+15055069451">505-506-9451</a>
+                </div>
+                <div class="contact-item">
+                    <span class="label">LinkedIn</span>
+                    <a href="https://linkedin.com/in/keithtatemcm" target="_blank" rel="noopener">linkedin.com/in/keithtatemcm</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div>Foundational Analytics LLC &middot; Albuquerque, NM</div>
+        <div class="tagline">Data & AI Solutions for Commercial Construction</div>
+    </footer>
+
+</body>
+</html>
